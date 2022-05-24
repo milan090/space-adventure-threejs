@@ -102,12 +102,12 @@ export class World {
     const texture = await new Promise<CubeTexture>((resolve, reject) => {
       loader.load(
         [
-          "assets/textures/kurt/space_ft.png",
-          "assets/textures/kurt/space_bk.png",
-          "assets/textures/kurt/space_up.png",
-          "assets/textures/kurt/space_dn.png",
-          "assets/textures/kurt/space_rt.png",
-          "assets/textures/kurt/space_lf.png",
+          "textures/kurt/space_ft.png",
+          "textures/kurt/space_bk.png",
+          "textures/kurt/space_up.png",
+          "textures/kurt/space_dn.png",
+          "textures/kurt/space_rt.png",
+          "textures/kurt/space_lf.png",
         ],
         (texture) => {
           resolve(texture);
