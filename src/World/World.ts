@@ -1,5 +1,5 @@
 import { AnimatedComponent, Component, TickData } from "./Component";
-import { Box } from "./components/Box";
+
 import { Camera } from "./components/main/Camera";
 import { createLights } from "./components/main/lights";
 import { createScene } from "./components/main/scene";
@@ -13,7 +13,6 @@ import {
   CubeTextureLoader,
   DoubleSide,
   Mesh,
-  MeshBasicMaterial,
   MeshStandardMaterial,
   TubeBufferGeometry,
 } from "three";
@@ -38,7 +37,7 @@ export class World {
 
     this.controls = new Controls(this.camera, this.renderer.domElement);
 
-    const resizer = new Resizer(container, this.camera, this.renderer);
+    new Resizer(container, this.camera, this.renderer);
 
     this.loop = new Loop(this.camera, this.scene, this.renderer);
 
@@ -83,6 +82,7 @@ export class World {
   add(...components: (Component | AnimatedComponent)[]) {
     components.forEach((component) => {
       this.scene.add(component);
+      this.components.push(component);
       if (component.tick) {
         this.loop.add(component as AnimatedComponent);
       }
@@ -98,13 +98,6 @@ export class World {
   }
 
   async initSkyBox() {
-    // const materialArray = await loadSkyBox();
-    // console.log(materialArray);
-    // const skyboxGeo = new BoxGeometry(10000, 10000, 10000);
-    // const skyBox = new Mesh(skyboxGeo, materialArray);
-    // const skyBox = new Box(1000, 1000, 1000);
-    // this.add(skyBox);
-
     const loader = new CubeTextureLoader();
     const texture = await new Promise<CubeTexture>((resolve, reject) => {
       loader.load(

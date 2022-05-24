@@ -1,4 +1,4 @@
-import { DirectionalLight, HemisphereLight, SpotLight, Vector3 } from "three";
+import { HemisphereLight, SpotLight } from "three";
 
 export function createLights() {
   const ambientLight = new HemisphereLight("white", "darkslategrey", 2);

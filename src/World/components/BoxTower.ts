@@ -1,10 +1,5 @@
 import { Group } from "three";
-import {
-  AnimatedComponent,
-  Component,
-  tickChildren,
-  TickData,
-} from "../Component";
+import { AnimatedComponent, Component, TickData } from "../Component";
 import { addToVertices } from "../utils/vertices";
 import { Box } from "./Box";
 

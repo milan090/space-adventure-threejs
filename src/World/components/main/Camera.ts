@@ -7,5 +7,5 @@ export class Camera extends PerspectiveCamera implements Component {
     super(fov, aspectRatio, 0.1, 30000);
     this.position.set(0, 5, 10);
   }
-  tick(tickData: TickData) {}
+  tick?: (tickData: TickData) => void;
 }

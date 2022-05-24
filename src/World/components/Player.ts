@@ -1,6 +1,5 @@
 import {
   CylinderBufferGeometry,
-  CylinderGeometry,
   Group,
   Mesh,
   MeshStandardMaterial,
